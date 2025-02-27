@@ -31,6 +31,28 @@ def recommend_thing():
         "Greet your guests with a smile.",
         "Don't grab all the food at once and leave some for your guests!"
     ]
+# Replace Function that will Replace a person the user does not like
+def replace_guest(invited_people: list):
+    display_guest(invited_people)
+    
+    guest_remove = input("\nEnter the name of the guest you would like to replace? ").strip()
+    if guest_remove not in invited_people:
+        print(f"{guess_remove} is not in the guest list!")
+        return
+
+    new_guest = input("Enter the name of the new guest:")
 # Make a list of People Invited
 invited_people = []
 
+# Ask the User the amount of guests to invite
+while True:
+    try:
+        num_guests = input("How many guests would you like to invite?")
+        if num_guests <= 0:
+            print("Please enter a positive number so that we can continue.")
+        else:
+            break      
+    except ValueError:
+        print("Invalid input! Please enter a number!")
+
+# Retrieve guest names
