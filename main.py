@@ -1,6 +1,6 @@
 import random # For the Recommended thing
 # This is a Dinner Guest List
-
+ 
 # Create a invitation Function
 def invitation_greet(guest: str):
     print(f"Hello {guest}, you are hearby invited to my Dinner with lots of Tacos and Sour Cream.")
