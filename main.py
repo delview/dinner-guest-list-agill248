@@ -58,3 +58,9 @@ while True:
         print("Invalid input! Please enter a number!")
 
 # Retrieve guest names
+for x in range(num_guests):
+    guest_name = input("Enter the name of the guest you would like to invite to your party!").strip()
+    invited_people.append(guest_name)
+
+# Display the list of invited people to the party
+display_guest(invited_people)
