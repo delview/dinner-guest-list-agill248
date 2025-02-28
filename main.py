@@ -1,9 +1,6 @@
 import random # For the Recommended thing
 # This is a Dinner Guest List
  
-# Create a invitation Function
-def invitation_greet(guest: str):
-    print(f"Hello {guest}, you are hearby invited to my Dinner with lots of Tacos and Sour Cream.")
 
 # Create a Remove Guest Function 
 def remove_guest(invited_people: list, guest: str):
@@ -18,7 +15,7 @@ def remove_guest(invited_people: list, guest: str):
 def display_guest(invited_people: list):
     if invited_people:
         print("\nHere is your current guest list!")
-        for guest in invited_people:
+        for guest in invited_people:    
             print("{guest}")
     else:
         print("\nYour guest list is empty.")
@@ -37,12 +34,17 @@ def replace_guest(invited_people: list):
     
     guest_remove = input("\nEnter the name of the guest you would like to replace? ").strip()
     if guest_remove not in invited_people:
-        print(f"{guess_remove} is not in the guest list!")
+        print(f"{guest_remove} is not in the guest list!")
         return
 
     new_guest = input("Enter the name of the new guest:")
 # Make a list of People Invited
 invited_people = []
+
+# Greet the User
+print("Hello, welcome to the Dinner Guest Invitation Game!")
+name = input("Before we begin what is your name?")
+print(f"Welcome {name}, lets start inviting people and make the TACOS!")
 
 # Ask the User the amount of guests to invite
 while True:
