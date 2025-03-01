@@ -2,14 +2,29 @@ import random # For the Recommended thing
 # This is a Dinner Guest List
  
 
+# Create a Add Guest Function
+def add_guest(invited_people: list):
+   while True:
+        guest = input("Please enter the name of the guest you would like to invite!").strip()
+        if guest:
+            invited_people.append(guest)
+            print(f"{guest} has been added!")
+            break
+        else:
+         print("Please enter in the right name for the sake of your guest!")
+
 # Create a Remove Guest Function 
-def remove_guest(invited_people: list, guest: str):
-    if guest in invited_people:
-        invited_people.remove(guest)
-        print(f"{guest} has been removed from your spectacualar Dinner!")
-    else:
-        print("Please select a guest who is in your list and that you want to kick out from the Dinner.")
-    return invited_people
+def remove_guest(invited_people: list):
+    while True:
+        guest = input("Please enter the name of the guest you would like remove!").strip()
+        if guest in invited_people:
+            invited_people.remove(guest)
+            print(f"{guest} has been removed from your spectacualar Dinner!")
+            break
+        elif guest == "":
+            print("That is an invalid, please enter in the correct name!")
+        else:
+            print("That guest isn't on your list silly, please try again!")
 
 # Create a Function that shows the player the Invited List
 def display_guest(invited_people: list):
@@ -28,6 +43,7 @@ def recommend_thing():
         "Greet your guests with a smile.",
         "Don't grab all the food at once and leave some for your guests!"
     ]
+    print(random.choice(things))
 # Replace Function that will Replace a person the user does not like
 def replace_guest(invited_people: list):
     display_guest(invited_people)
@@ -65,5 +81,26 @@ for x in range(num_guests):
 
 # Make a choice selection menu for the user
 while True:
-    print("Okkk, here are the next choices for your party.. By the way I don't know anyone on your list!")
-    print("1")
+    print("\nOkkk, here are the next choices for your party.. (1) Add someone, (2) Remove someone, (3) View your current list, (4) Get a piece of recommended things to do at the party, (5) Replace a guest and (6) Exit.")
+    choice = input("Please select a option.").strip()
+
+    if choice == "1":
+        invited_people = add_guest(invited_people)
+        print("That guest has been added!")
+    elif choice == "2":
+        remove_guest(invited_people)
+        print("That guest has been removed")
+    elif choice == "3":
+        display_guest(invited_people)
+        print("BANG, HERES THE LIST!")
+    elif choice == "4":
+        recommend_thing()
+    elif choice == "5":
+        replace_guest(invited_people)
+    elif choice == "6":
+        print("Peace out and have a wonderful party! LIVE IT UP!")
+        break
+    else:
+        print("Please select one of the six choices, by using a number.")
+
+        
