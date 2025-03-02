@@ -35,6 +35,15 @@ def display_guest(invited_people: list):
     else:
         print("\nYour guest list is empty. Get some people on there!")
 
+# Create a Send Invite Function 
+def send_invites(invited_people: list):
+    print("\nSending Invitations.")
+    for guest in invited_people:
+        print(f"The Invitation has been sent to {guest}")
+    print("ALL OF YOUR INVITATIONS HAS BEEN SEND!")
+    if not invited_people:
+        print("There are no guests to invite!")
+        return
 # Create a Function that tells the user a random recommended thing to do at the Dinner
 def recommend_thing():
     things = [
@@ -81,7 +90,7 @@ for x in range(num_guests):
 
 # Make a choice selection menu for the user
 while True:
-    print("\nOkkk, here are the next choices for your party.. (1) Add someone, (2) Remove someone, (3) View your current list, (4) Get a piece of recommended things to do at the party, (5) Replace a guest and (6) Exit.")
+    print("\nHere are the next choices for your party.. (1) Add guest, (2) Remove guest, (3) View your list, (4) Recommended things to do at the party, (5) Replace a guest, (6) Send our invites and (7) Exit.")
     choice = input("Please select a option.").strip()
 
     if choice == "1":
@@ -98,9 +107,11 @@ while True:
     elif choice == "5":
         replace_guest(invited_people)
     elif choice == "6":
+        send_invites(invited_people)
+    elif choice == "7":
         print("Peace out and have a wonderful party! LIVE IT UP!")
         break
     else:
-        print("Please select one of the six choices, by using a number.")
+        print("Please select one of the seven choices, by using a number.")
 
         
