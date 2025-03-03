@@ -58,7 +58,7 @@ def replace_guest(invited_people: list):
     display_guest(invited_people)
     guest_remove = input("\nEnter the name of the guest you would like to replace? ").strip()
     if guest_remove not in invited_people:
-        print(f"{guest_remove} is not in the guest list!")
+        print(f"{guest_remove} is not in the guest list! (just because of that your restarting....)")
         return
     new_guest = input("Enter the name of the new guest:")
     invited_people.remove(guest_remove)
@@ -90,18 +90,15 @@ for x in range(num_guests):
 
 # Make a choice selection menu for the user
 while True:
-    print("\nHere are the next choices for your party.. (1) Add guest, (2) Remove guest, (3) View your list, (4) Recommended things to do at the party, (5) Replace a guest, (6) Send our invites and (7) Exit.")
+    print("\nHere are the next choices for your party.. (1) Add guest, (2) Remove guest, (3) View your list, (4) Recommended things to do at the party, (5) Replace a guest, (6) Send out invites and (7) Exit.")
     choice = input("Please select a option.").strip()
 
     if choice == "1":
         invited_people = add_guest(invited_people)
-        print("That guest has been added!")
     elif choice == "2":
         remove_guest(invited_people)
-        print("That guest has been removed")
     elif choice == "3":
         display_guest(invited_people)
-        print("BANG, HERES THE LIST!")
     elif choice == "4":
         recommend_thing()
     elif choice == "5":
