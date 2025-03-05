@@ -10,8 +10,6 @@ def add_guest(invited_people: list):
             invited_people.append(guest)
             print(f"{guest} has been added!")
             break
-        else:
-         print("Please enter in the right name for the sake of your guest!")
 
 # Create a Remove Guest Function 
 def remove_guest(invited_people: list):
